@@ -3,7 +3,7 @@ import SkillsDrawer from "@/components/skillsdrawer";
 export default function Home() {
     return (
         <div>
-            <div className="w-full max-w-md mx-auto text-center space-y-6">
+            <div className="w-full max-w-md mx-auto text-center space-y-6 tracking-normal">
                 <h1 className="text-5xl font-bold">Ki Kim</h1>
                 <p className="text-muted-foreground">Full Stack Software Engineer</p>
                 <p className="text-muted-foreground">AI developer</p>
