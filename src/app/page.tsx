@@ -1,5 +1,5 @@
-//import Image from "next/image";
 import SkillsDrawer from "@/components/skillsdrawer";
+
 export default function Home() {
     return (
         <div>

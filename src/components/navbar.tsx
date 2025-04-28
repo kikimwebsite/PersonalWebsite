@@ -1,16 +1,13 @@
 "use client"
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 export default function Navbar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
-    <nav className="bg-white border-b">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
           <div className="flex-row flex-shrink-0 mr-15">
             <Link href="/" className="text-2xl font-bold mr-15">
               Ki Kim
@@ -61,11 +58,5 @@ export default function Navbar() {
             Contact
             </Link>
           </div>
-          <div >
-            test
-          </div>
-        </div>
-      </div>
-    </nav>
-  )
+  );
 }
