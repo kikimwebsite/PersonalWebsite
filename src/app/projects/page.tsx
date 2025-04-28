@@ -17,7 +17,7 @@ export default function Projects() {
                     title="Message Board"
                     description="."
                     image=""
-                    link="https://github.com"
+                    link="https://github.com/kikimwebsite/PersonalWebsite/tree/main/src/app/messages"
                     tags={[]}
                 />
                 <ProjectCard
