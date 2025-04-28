@@ -1,4 +1,4 @@
-import MessageCard from "@/components/project-card";
+//import MessageCard from "@/components/project-card";
 
 export default function Messages() {
     return (
