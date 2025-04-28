@@ -73,7 +73,7 @@ export default function SkillsDrawer() {
                 </Button>
             </DrawerTrigger>
         <DrawerContent>
-            <div className="mx-auto w-full max-w-4xl h-1/2vh">
+            <div className="mx-auto w-full px-17">
                 <DrawerHeader>
                     <div className="flex items-center justify-between">
                     <DrawerTitle className="text-2xl font-bold">Professional Skills</DrawerTitle>
@@ -84,10 +84,10 @@ export default function SkillsDrawer() {
                         </Button>
                     </DrawerClose>
                     </div>
-                
                 </DrawerHeader>
-                <ScrollArea className="rounded-md border mb-3">
-                    <div className="p-5 pb-10">
+                
+                <ScrollArea className="h-100 rounded-md border">
+                    <div className="p-5">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                         {/* Programming Skills */}
                         <div className="space-y-3">

@@ -10,7 +10,7 @@ export default function Projects() {
                     title="My Personal Portfolio"
                     description="."
                     image=""
-                    link="https://github.com"
+                    link="https://github.com/kikimwebsite/PersonalWebsite"
                     tags={[]}
                 />
                 <ProjectCard
@@ -21,8 +21,8 @@ export default function Projects() {
                     tags={[]}
                 />
                 <ProjectCard
-                    title=""
-                    description="."
+                    title="WIP"
+                    description="Fixing some hosting issues... will be back up soon!"
                     image="/?height=400&width=600"
                     link="https://github.com"
                     tags={[]}

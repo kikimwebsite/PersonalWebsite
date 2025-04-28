@@ -7,9 +7,9 @@ export default function Home() {
     return (
         <>
             <section className="w-full max-w-md mx-auto text-center space-y-6 tracking-normal">
-                <h1 className="text-5xl font-bold tracking-widest">Ki Kim</h1>
+                <h1 className="text-5xl font-bold tracking-wide">Ki Kim</h1>
                 <p className="text-muted-foreground">Full Stack Software Engineer /</p>
-                <p className="text-muted-foreground">AI developer /</p>
+                <p className="text-muted-foreground">AI Developer /</p>
                 <p className="text-muted-foreground">Composer /</p>
                 <SkillsDrawer />
             </section>
