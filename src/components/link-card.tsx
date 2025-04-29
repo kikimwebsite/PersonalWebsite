@@ -1,9 +1,9 @@
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 
 interface LinkCardProps {
-  title: string
-  description: string
-  children: React.ReactNode;
+    title: string
+    description: string
+    children: React.ReactNode;
 }
 
 export default function LinkCard({ title, description, children}: LinkCardProps) {

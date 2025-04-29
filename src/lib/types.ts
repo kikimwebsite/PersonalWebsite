@@ -1,7 +1,7 @@
-export interface Message {
-    id: string
-    title: string
-    body: string
-    userId: string
+export type Message = {
+    id: string;
+    author: string;
+    title: string;
+    content: string;
+    userEmail: string;
 }
-  

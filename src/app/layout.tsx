@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 //import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AuthProvider } from "@/components/auth-provider"
 import Navbar from "@/components/navbar";
 import UserButton from "@/components/user-button";
 /*
@@ -29,17 +30,19 @@ export default function RootLayout({
         <body
             //className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
-            <div className="min-h-screen flex flex-col">
-                <nav className="bg-white border-b">
-                    <div className="container mx-auto px-4">
-                        <div className="flex h-16 items-center justify-between">
-                            <Navbar />
-                            <UserButton />
+            <AuthProvider>
+                <div className="min-h-screen flex flex-col">
+                    <nav className="bg-white border-b">
+                        <div className="container mx-auto px-4">
+                            <div className="flex h-16 items-center justify-between">
+                                <Navbar />
+                                <UserButton />
+                            </div>
                         </div>
-                    </div>
-                </nav>
-                <main className="flex-1 container mx-auto p-4">{children}</main>
-            </div>
+                    </nav>
+                    <main className="flex-1 container mx-auto p-4">{children}</main>
+                </div>
+            </AuthProvider>
         </body>
     </html>
   );

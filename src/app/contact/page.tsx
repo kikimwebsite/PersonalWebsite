@@ -30,7 +30,7 @@ export default function Contact() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                    <Github className="h-5 w-5 text-muted-foreground mt-1.5" />
+                    <Github className="h-5 w-5 text-muted-foreground mt-2" />
                     <Button variant="outline" className="gap-2">
                         <a target="_blank" href="https://github.com/kikimwebsite">
                             <h3 className="font-medium">GitHub</h3>
