@@ -13,22 +13,44 @@ interface MessageData {
 export async function createMessage(data: MessageData) {
     const { author, title, content, email } = data;
 
-
     if (!email) {
         throw new Error("Email is required");     
     }
-
-    // Validate inputs server-side
-    if (!author) {
+    if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+        throw new Error("Invalid email format");
+    }
+    if (!author.trim()) {
         throw new Error("Name is required");
+    }
+    /*
+    if (!author.match(/^[a-zA-Z\s]+$/)) {
+        throw new Error("Name can only contain letters and spaces");
+    }*/
+    if (author.length < 3) {    
+        throw new Error("Name is is too short");
+    }
+    if (author.length > 50) {               
+        throw new Error("Name is is too long");
     }
 
     if (!title.trim()) {
         throw new Error("Title is required");
     }
+    if (title.length > 100) {
+        throw new Error("Title must be less than 100 characters");
+    }
+    if (title.length < 3) {
+        throw new Error("Title is is too short");
+    }
 
     if (!content.trim()) {
         throw new Error("Message content is required");
+    }
+    if (content.length > 1000) {
+        throw new Error("Message must be less than 1000 characters");
+    }
+    if (content.length < 3) {
+        throw new Error("Message is is too short");
     }
 
     try {

@@ -33,5 +33,5 @@ export default function MessageModal({ message, isOpen, onClose }: MessageModalP
             </DialogFooter>
         </DialogContent>
         </Dialog>
-    )
+    );
 }
