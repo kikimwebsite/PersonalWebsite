@@ -1,10 +1,8 @@
 'use client'
  
-import { useEffect } from 'react'
-import { Button } from '@/components/ui/button'
+import { useEffect } from 'react';
 export default function Error({
-  error,
-  reset,
+  error
 }: {
   error: Error & { digest?: string }
   reset: () => void
@@ -16,13 +14,6 @@ export default function Error({
   return (
     <div>
       <h2>There might be some trouble with Supabase... Please try refreshing the page!</h2>
-      <Button
-        onClick={
-          () => reset()
-        }
-      >
-        Try again
-      </Button>
     </div>
-  )
+  );
 }
