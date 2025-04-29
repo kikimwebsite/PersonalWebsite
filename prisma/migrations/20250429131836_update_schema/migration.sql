@@ -11,3 +11,5 @@ CREATE TABLE "Message" (
 
     CONSTRAINT "Message_pkey" PRIMARY KEY ("id")
 );
+
+-- Resetting migration for deployment
