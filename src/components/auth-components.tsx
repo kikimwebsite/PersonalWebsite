@@ -1,5 +1,6 @@
-import { signIn, signOut } from "@/auth";
+import { signIn } from "@/auth";
 import { Button } from "@/components/ui/button";
+import { signOut } from "next-auth/react";
 
 export function SignIn({
   provider,
@@ -20,9 +21,9 @@ export function SignIn({
 export function SignOut(props: React.ComponentPropsWithRef<typeof Button>) {
   return (
     <form
-      action={async () => {
-        "use server"
-        await signOut()
+      action={() => {
+        "use client"
+        signOut()
       }}
       className="w-full"
     >

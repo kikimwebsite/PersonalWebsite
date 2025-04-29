@@ -16,16 +16,11 @@ export async function createMessage(data: MessageData) {
     if (!email) {
         throw new Error("Email is required");     
     }
-    if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-        throw new Error("Invalid email format");
-    }
+
     if (!author.trim()) {
         throw new Error("Name is required");
     }
-    /*
-    if (!author.match(/^[a-zA-Z\s]+$/)) {
-        throw new Error("Name can only contain letters and spaces");
-    }*/
+
     if (author.length < 3) {    
         throw new Error("Name is is too short");
     }

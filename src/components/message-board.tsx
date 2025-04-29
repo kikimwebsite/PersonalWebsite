@@ -48,11 +48,11 @@ export function MessageBoard({ messages }: DashboardProps) {
         <div className="mb-4">
             {status === "authenticated" ? 
                 <>
-                    <h2 className="text-xl font-semibold"></h2>
                     <Button onClick={() => setIsCreateModalOpen(true)}>
                     <Plus className="h-4 w-4 mr-2" />
                         Create a New Message
                     </Button>
+
                 </>
                 : <>Please sign in to create, edit, or delete messages</>
             }

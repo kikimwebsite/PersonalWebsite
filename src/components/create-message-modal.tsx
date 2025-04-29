@@ -37,12 +37,14 @@ export function CreateMessageModal({ session, isOpen, onClose, onCreateMessage }
         const newErrors: FormErrors = {};
         let isValid = true;
 
-
         if (!title.trim()) {
             newErrors.title = "Title is required";
             isValid = false;
         } else if (title.length > 100) {
             newErrors.title = "Title must be less than 100 characters";
+            isValid = false;
+        } else if (title.length < 3) {
+            newErrors.title = "Title must be more than 3 characters";
             isValid = false;
         }
 
@@ -52,6 +54,9 @@ export function CreateMessageModal({ session, isOpen, onClose, onCreateMessage }
         } else if (content.length > 1000) {
             newErrors.content = "Message must be less than 1000 characters";
             isValid = false;
+        } else if (content.length < 3) {
+            newErrors.content = "Message must be more than 3 characters";
+            isValid = false;
         }
 
         if (!author.trim()) {
@@ -59,6 +64,9 @@ export function CreateMessageModal({ session, isOpen, onClose, onCreateMessage }
             isValid = false;
         } else if (author.length > 100) {
             newErrors.title = "Name must be less than 100 characters";
+            isValid = false;
+        } else if (author.length < 3) {
+            newErrors.title = "Name must be more than 3 characters";
             isValid = false;
         }
 

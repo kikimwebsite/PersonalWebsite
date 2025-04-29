@@ -21,7 +21,7 @@ export default function Projects() {
                     tags={[]}
                 />
                 <ProjectCard
-                    title="WIP"
+                    title="E-Commerce Shop"
                     description="Fixing some hosting issues... will be back up soon!"
                     image="/?height=400&width=600"
                     link="https://github.com"
