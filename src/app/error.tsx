@@ -18,7 +18,7 @@ export default function Error({
       <h2>There might be some trouble with Supabase... Please try refreshing the page!</h2>
       <Button
         onClick={
-          () => reset();
+          () => reset()
         }
       >
         Try again
