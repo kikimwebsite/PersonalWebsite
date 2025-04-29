@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 //import type { Session } from "next-auth";
 //import { useRouter } from "next/navigation";
@@ -24,7 +24,13 @@ export function MessageBoard({ messages }: DashboardProps) {
     const [isViewModalOpen, setIsViewModalOpen] = useState(false);
     const [isCreateModalOpen, setIsCreateModalOpen] = useState(false);
     
-    const { data: session } = useSession();
+    const { data: session, status, update  } = useSession();
+
+    useEffect(() => {
+        if (status === 'loading' || !session) {
+          update();
+        }
+      }, [session, status, update]);
 
     const handleCreateMessage = () => {
         //setMessages([newMessage, ...messages])
@@ -38,25 +44,26 @@ export function MessageBoard({ messages }: DashboardProps) {
     }
 
     return (
-        <>
-        {session ? 
-            <div>
-                <h2 className="text-xl font-semibold"></h2>
-                <Button onClick={() => setIsCreateModalOpen(true)}>
-                <Plus className="h-4 w-4 mr-2" />
-                    Create New Message
-                </Button>
-            </div>
-            : <div>Please sign in to create, edit, or delete messages</div>
-
-        }
+        <div className="max-w-[900px]">
+        <div className="mb-4">
+            {status === "authenticated" ? 
+                <>
+                    <h2 className="text-xl font-semibold"></h2>
+                    <Button onClick={() => setIsCreateModalOpen(true)}>
+                    <Plus className="h-4 w-4 mr-2" />
+                        Create a New Message
+                    </Button>
+                </>
+                : <>Please sign in to create, edit, or delete messages</>
+            }
+        </div>
 
         {messages.length === 0 ? (
             <div className="text-center py-12 bg-white rounded-lg shadow">
             <p className="text-slate-500">No messages</p>
             </div>
         ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {messages.map((message) => (
                 <MessageCard
                 key={message.id}
@@ -72,7 +79,7 @@ export function MessageBoard({ messages }: DashboardProps) {
         )}
 
 
-        {session && (
+        {status === "authenticated" && (
         <CreateMessageModal
             session={session}
             isOpen={isCreateModalOpen}
@@ -81,6 +88,6 @@ export function MessageBoard({ messages }: DashboardProps) {
         />
         )}
 
-        </>
+        </div>
     );
 }

@@ -152,7 +152,7 @@ export function CreateMessageModal({ session, isOpen, onClose, onCreateMessage }
                 </div>
                 <div className="space-y-2">
                     <Label htmlFor="author" className="flex justify-between">
-                    <span>Author</span>
+                    <span>From: </span>
                     {errors.author && <span className="text-xs text-destructive">{errors.author}</span>}
                     </Label>
                     <Input
