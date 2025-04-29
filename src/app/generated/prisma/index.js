@@ -162,16 +162,17 @@ const config = {
     "db"
   ],
   "activeProvider": "postgresql",
+  "postinstall": false,
   "inlineDatasources": {
     "db": {
       "url": {
         "fromEnvVar": "POSTGRES_PRISMA_URL",
-        "value": "postgres://postgres.tjnmjoxxcrmghwkgruqq:XRsF7r4eN5gdqWi0@aws-0-us-east-1.pooler.supabase.com:6543/postgres?sslmode=require&supa=base-pooler.x"
+        "value": null
       }
     }
   },
-  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/app/generated/prisma\"\n}\n\ndatasource db {\n  provider  = \"postgresql\"\n  url       = env(\"POSTGRES_PRISMA_URL\") // uses connection pooling\n  directUrl = env(\"POSTGRES_URL_NON_POOLING\") // uses a direct connection\n}\n\nmodel Message {\n  id        String   @id @default(cuid())\n  author    String\n  title     String\n  content   String\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n  userEmail String\n  userName  String?\n}\n",
-  "inlineSchemaHash": "0df5197534622f01dc960e6524be4ab4043a97c87bb65d43dec2b86c7d7bc858",
+  "inlineSchema": "generator client {\n  provider = \"prisma-client-js\"\n  output   = \"../src/app/generated/prisma\"\n}\n\ndatasource db {\n  provider  = \"postgresql\"\n  url       = env(\"POSTGRES_PRISMA_URL\")\n  directUrl = env(\"POSTGRES_URL_NON_POOLING\")\n}\n\nmodel Message {\n  id        String   @id @default(cuid())\n  author    String\n  title     String\n  content   String\n  createdAt DateTime @default(now())\n  updatedAt DateTime @updatedAt\n  userEmail String\n  userName  String?\n}\n",
+  "inlineSchemaHash": "51a55a01e82770d3aca767d86a94e13e1f319c26ea3090b8c9a213489dd70bfd",
   "copyEngine": true
 }
 
