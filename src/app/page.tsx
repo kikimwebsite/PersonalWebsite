@@ -7,14 +7,14 @@ export default function Home() {
     return (
         <>
             <section className="w-full max-w-md mx-auto text-center space-y-6 tracking-normal">
-                <h1 className="text-5xl font-bold tracking-wide">Ki Kim</h1>
+                <h1 className="text-5xl font-bold tracking-wide mt-3">Ki Kim</h1>
                 <p className="text-muted-foreground">Full Stack Software Engineer /</p>
                 <p className="text-muted-foreground">AI Developer /</p>
                 <p className="text-muted-foreground">Composer /</p>
                 <SkillsDrawer />
             </section>
 
-            <section className="mx-auto my-25 lg:w-1/2 w-3/4 grid gap-10 md:grid-cols-2 grid-cols-1">
+            <section className="mx-auto my-20 lg:w-1/2 w-3/4 grid gap-10 md:grid-cols-2 grid-cols-1">
                 <LinkCard
                     title="My LinkedIn"
                     description="Take a look at my professional experiences and skillsets"
