@@ -35,11 +35,12 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
+                
                 //className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
                 <AuthProvider>
-                    <div className="min-h-screen flex flex-col">
-                        <nav className="bg-white border-b">
+                    <div className="min-h-screen flex flex-col gold">
+                        <nav className="bg-white border-b border-gray-300 silver">
                             <div className="container mx-auto px-4">
                                 <div className="flex h-16 items-center justify-between">
                                     <Navbar />

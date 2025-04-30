@@ -123,3 +123,49 @@
     cursor: pointer;
   }
 }
+
+.gold {
+    height: 200px;
+    background: linear-gradient(
+        to bottom, 
+        #ffffff 0%,         /* Pure white at the top */
+        #fdfdf0 70%,        /* Off-white moved to 70% */
+        #f8f4e0 75%,        /* Warm light beige */
+        #f4e8c9 85%,        /* Subtle golden tint */
+        #e8d89d 95%,        /* Softer metallic gold */
+        #d4b86a 100%        /* Rich golden tone at the bottom */
+    );
+}
+.silver {
+    background: linear-gradient(
+        45deg,
+        #f7f7f7 4%, /* Lighter silver */
+        #eaeaea 8%, /* Lighter gray */
+        #f7f7f7 12%, /* Lighter silver */
+        #dcdcdc 16%, /* Softer gray */
+        #eeeeee 20%, /* Light gray */
+        #cccccc 24%, /* Pale silver */
+        #ffffff 30%, /* White */
+        #dddddd 50%, /* Light silver */
+        #828181 70%, /* Soft gray */
+        #e0e0e0 80%, /* Light gray */
+        #f7f7f7 90%, /* Lighter silver */
+        #cccccc 96% /* Pale silver */
+    );
+    background-size: 200% 200%;
+    transition: background-position 0.4s ease;
+}
+
+.silver:hover {
+    animation: metallic-shine 7.5s linear infinite;
+}
+
+@keyframes metallic-shine {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+  
