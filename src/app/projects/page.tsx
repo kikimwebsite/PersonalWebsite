@@ -8,7 +8,7 @@ export default function Projects() {
             <div className="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 <ProjectCard
                     title="My Personal Portfolio"
-                    description="Personal Portfolio in Next.js, TypeScript, and Tailwind."
+                    description="Personal Portfolio in Next.js, TypeScript, and Tailwind. Showcases an automated AI chatbot to enhanece user experience"
                     image="/Main.png"
                     link="https://kikim.dev/"
                     source="https://github.com/kikimwebsite/PersonalWebsite"
