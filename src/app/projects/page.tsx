@@ -2,7 +2,7 @@ import ProjectCard from "@/components/project-card";
 
 export default function Projects() {
     return (
-        <div className="py-3 max-w-[1000px]">
+        <div className="py-3 max-w-[900px]">
             <h1 className="text-2xl font-bold mb-10">Projects</h1>
 
             <div className="grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -23,7 +23,7 @@ export default function Projects() {
                 <ProjectCard
                     title="E-Commerce Shop"
                     description="Fixing some hosting issues... will be back up soon!"
-                    image="/?height=400&width=600"
+                    image=""
                     link="https://github.com"
                     tags={[]}
                 />

@@ -23,7 +23,7 @@ export default function ProjectCard({ title, description, image, link, tags }: P
             className="object-cover transition-transform hover:scale-105"
             />
         </div>
-        <CardContent className="p-4 h-30 mb-5">
+        <CardContent className="p-4 h-30 mb-10">
             <h3 className="font-semibold text-xl mb-2">{title}</h3>
             <p className="text-sm text-muted-foreground mb-4">{description}</p>
             <div className="flex flex-wrap gap-2">

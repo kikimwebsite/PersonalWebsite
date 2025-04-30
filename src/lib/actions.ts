@@ -71,7 +71,7 @@ export async function createMessage(data: MessageData) {
 export async function deleteMessage(messageId: string) {
 
     const session = await auth();
-console.log(messageId, session)
+
     if (!session?.user) {
         throw new Error("You must be logged in to delete a message");
     }
