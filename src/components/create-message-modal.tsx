@@ -16,7 +16,6 @@ interface CreateMessageModalProps {
     session: Session
     isOpen: boolean
     onClose: () => void
-    onCreateMessage: (message: any) => void
 }
 
 interface FormErrors {
@@ -26,7 +25,7 @@ interface FormErrors {
     form?: string
 }
 
-export function CreateMessageModal({ session, isOpen, onClose, onCreateMessage }: CreateMessageModalProps) {
+export function CreateMessageModal({ session, isOpen, onClose }: CreateMessageModalProps) {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState("");
     const [author, setAuthor] = useState("");
@@ -83,14 +82,13 @@ export function CreateMessageModal({ session, isOpen, onClose, onCreateMessage }
         setErrors({});
 
         try {
-            const newMessage = await createMessage({
+            await createMessage({
                 title,
                 content,
                 author,
                 email: session?.user?.email || "",
             })
 
-            onCreateMessage(newMessage);
             setTitle("");
             setContent("");
             onClose();
@@ -131,59 +129,59 @@ export function CreateMessageModal({ session, isOpen, onClose, onCreateMessage }
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                     <Label htmlFor="title" className="flex justify-between">
-                    <span>Title</span>
-                    {errors.title && <span className="text-xs text-destructive">{errors.title}</span>}
+                        <span>Title</span>
+                        {errors.title && <span className="text-xs text-destructive">{errors.title}</span>}
                     </Label>
                     <Input
-                    id="title"
-                    value={title}
-                    onChange={(e) => setTitle(e.target.value)}
-                    placeholder="Enter message title"
-                    className={errors.title ? "border-destructive" : ""}
-                    disabled={isSubmitting}
+                        id="title"
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        placeholder="Enter message title"
+                        className={errors.title ? "border-destructive" : ""}
+                        disabled={isSubmitting}
                     />
                 </div>
                 <div className="space-y-2">
                     <Label htmlFor="content" className="flex justify-between">
-                    <span>Message</span>
-                    {errors.content && <span className="text-xs text-destructive">{errors.content}</span>}
+                        <span>Message</span>
+                        {errors.content && <span className="text-xs text-destructive">{errors.content}</span>}
                     </Label>
                     <Textarea
-                    id="content"
-                    value={content}
-                    onChange={(e) => setContent(e.target.value)}
-                    placeholder="Write your message here..."
-                    rows={5}
-                    className={errors.content ? "border-destructive" : ""}
-                    disabled={isSubmitting}
+                        id="content"
+                        value={content}
+                        onChange={(e) => setContent(e.target.value)}
+                        placeholder="Write your message here..."
+                        rows={5}
+                        className={errors.content ? "border-destructive" : ""}
+                        disabled={isSubmitting}
                     />
                 </div>
                 <div className="space-y-2">
                     <Label htmlFor="author" className="flex justify-between">
-                    <span>From: </span>
-                    {errors.author && <span className="text-xs text-destructive">{errors.author}</span>}
+                        <span>From: </span>
+                        {errors.author && <span className="text-xs text-destructive">{errors.author}</span>}
                     </Label>
                     <Input
-                    id="author"
-                    value={author}
-                    onChange={(e) => setAuthor(e.target.value)}
-                    placeholder="Enter your name"
-                    className={errors.author ? "border-destructive" : ""}
-                    disabled={isSubmitting}
+                        id="author"
+                        value={author}
+                        onChange={(e) => setAuthor(e.target.value)}
+                        placeholder="Enter your name"
+                        className={errors.author ? "border-destructive" : ""}
+                        disabled={isSubmitting}
                     />
                 </div>
                 <div className="flex justify-end gap-2">
                     <Button type="button" variant="outline" onClick={handleClose} disabled={isSubmitting}>
-                    Cancel
+                        Cancel
                     </Button>
                     <Button type="submit" disabled={isSubmitting}>
-                    {isSubmitting ? (
-                        <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Submitting...
-                        </>
-                    ) : (
-                        "Submit Message"
+                        {isSubmitting ? (
+                            <>
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                            Submitting...
+                            </>
+                        ) : (
+                            "Submit Message"
                     )}
                     </Button>
                 </div>
