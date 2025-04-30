@@ -4,7 +4,7 @@ import "./globals.css";
 import { AuthProvider } from "@/components/auth-provider"
 import Navbar from "@/components/navbar";
 import UserButton from "@/components/user-button";
-//import Chatbot from "@/components/chatbot/chatbot";
+import Chatbot from "@/components/chatbot/chatbot";
 /*
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -50,7 +50,7 @@ export default function RootLayout({
                         <main className="flex-1 container mx-auto p-4">{children}</main>
                     </div>
                 </AuthProvider>
-                
+                <Chatbot />
             </body>
         </html>
     );

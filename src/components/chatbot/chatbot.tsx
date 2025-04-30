@@ -17,23 +17,22 @@ export default function Chatbot() {
                 queryParams: ["skipWelcome=1", "maximizable=1"],
                 domain: "https://www.jotform.com",
                 isDraggable: false,
-                background: "linear-gradient(180deg, #C8CEED 0%, #C8CEED 100%)",
-                buttonBackgroundColor: "#0a1551",
-                buttonIconColor: "#fff",
+                background: "linear-gradient(180deg, #b2c3d6 0%, #0f6ddb 100%)",
+                buttonBackgroundColor: "#0066C3",
+                buttonIconColor: "#FFFFFF",
                 variant: false,
                 customizations: {
-                greeting: "Yes",
-                greetingMessage: "Hi! How can I assist you?",
-                openByDefault: "No",
-                pulse: "Yes",
-                position: "right",
-                autoOpenChatIn: "1",
+                  greeting: "Yes",
+                  greetingMessage: "Hi! How can I assist you?",
+                  openByDefault: "No",
+                  pulse: "Yes",
+                  position: "right",
+                  autoOpenChatIn: "1",
                 },
                 isVoice: false,
             });
         };
 
-        // Clean up script on component unmount
         return () => {
         document.body.removeChild(script);
         };
