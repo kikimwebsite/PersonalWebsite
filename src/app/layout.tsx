@@ -16,8 +16,14 @@ const geistMono = Geist_Mono({
 });*/
 
 export const metadata: Metadata = {
-  title: "Ki Kim's Portfolio",
-  description: "Ki Kim's personal website to showcase skills and demo apps",
+    title: "Ki Kim's Portfolio",
+    description: "Ki Kim's personal website to showcase skills and demo apps",
+    icons: [
+        {
+        rel: "icon",
+        url: "/favicon.svg",
+        },
+    ]
 };
 
 export default function RootLayout({
@@ -25,25 +31,25 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="en">
-        <body
-            //className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-            <AuthProvider>
-                <div className="min-h-screen flex flex-col">
-                    <nav className="bg-white border-b">
-                        <div className="container mx-auto px-4">
-                            <div className="flex h-16 items-center justify-between">
-                                <Navbar />
-                                <UserButton />
+    return (
+        <html lang="en">
+            <body
+                //className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+            >
+                <AuthProvider>
+                    <div className="min-h-screen flex flex-col">
+                        <nav className="bg-white border-b">
+                            <div className="container mx-auto px-4">
+                                <div className="flex h-16 items-center justify-between">
+                                    <Navbar />
+                                    <UserButton />
+                                </div>
                             </div>
-                        </div>
-                    </nav>
-                    <main className="flex-1 container mx-auto p-4">{children}</main>
-                </div>
-            </AuthProvider>
-        </body>
-    </html>
-  );
+                        </nav>
+                        <main className="flex-1 container mx-auto p-4">{children}</main>
+                    </div>
+                </AuthProvider>
+            </body>
+        </html>
+    );
 }
