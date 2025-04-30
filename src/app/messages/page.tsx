@@ -20,7 +20,9 @@ export default async  function Messages() {
         return (
             <div className="mx-auto py-3">
                 <h1 className="text-2xl font-bold mb-3">Message Board</h1>
-                <p className="text-muted-foreground mb-5">Feel free to leave any messages; impressions, feedbacks, and jokes!</p>
+                <p className="text-muted-foreground">Feel free to leave any messages; impressions, feedbacks, and jokes!</p>
+                <p className="text-muted-foreground">You can view all messages but can only delete your own messages</p>
+                <p className="text-destructive mb-3">If you get any error, please try clicking buttons again, as Superbase server is having some issues right now</p>
                 <MessageBoard messages={messages} />
             </div>
         );

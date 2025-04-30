@@ -15,7 +15,7 @@ export default function Projects() {
                 />
                 <ProjectCard
                     title="Message Board"
-                    description="Message board where users can sign in with OAuth using Auth.js to post, update, and delete messages. Messages are saved in PostgreSQL Supabase database."
+                    description="Message board where users can sign in with OAuth using Auth.js to post and delete messages. Messages are saved in PostgreSQL Supabase database."
                     image="/Message.png"
                     link="https://github.com/kikimwebsite/PersonalWebsite/tree/main/src/app"
                     tags={[]}

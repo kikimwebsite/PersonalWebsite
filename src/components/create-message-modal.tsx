@@ -91,6 +91,7 @@ export function CreateMessageModal({ session, isOpen, onClose }: CreateMessageMo
 
             setTitle("");
             setContent("");
+            setAuthor("");
             onClose();
         } catch (error) {
             console.error("Failed to create message:", error);
