@@ -17,14 +17,11 @@ import {
     Code,
     Code2,
     Database,
-    Palette,
     LockKeyhole,
     X,
-    ServerIcon,
     Cloud,
     Briefcase,
     Brain,
-    Handshake,
     Variable,
 } from "lucide-react";
 
@@ -48,7 +45,9 @@ export default function SkillsDrawer() {
         "Next.js",
         "Node.js",
         "Express.js",
+        "Django",
         "RESTful API",
+        "GraphQL",
         "API Design",
         "Serverless Architecture"
         ],
