@@ -3,6 +3,28 @@
 import { revalidatePath } from "next/cache"
 import { prisma } from "@/lib/prisma";
 import { auth } from "@/auth";
+import { z } from "zod";
+
+const MessageSchema = z.object({
+    author: z.string()
+        .min(3, "Name is too short")
+        .max(50, "Name is too long")
+        .trim()
+        .nonempty("Name is required"),
+    title: z.string()
+        .min(3, "Title is too short")
+        .max(100, "Title must be less than 100 characters")
+        .trim()
+        .nonempty("Title is required"),
+    content: z.string()
+        .min(3, "Message is too short")
+        .max(1000, "Message must be less than 1000 characters")
+        .trim()
+        .nonempty("Message content is required"),
+    email: z.string()
+        .email("Invalid email")
+        .nonempty("Email is required"),
+});
 
 interface MessageData {
     author: string
@@ -12,56 +34,25 @@ interface MessageData {
 }
 
 export async function createMessage(data: MessageData) {
-    const { author, title, content, email } = data;
-
-    if (!email) {
-        throw new Error("Email is required");     
+    // Validate input using Zod
+    const parsed = MessageSchema.safeParse(data);
+    if (!parsed.success) {
+        // Return the first error message
+        throw new Error(parsed.error.errors[0].message);
     }
-
-    if (!author.trim()) {
-        throw new Error("Name is required");
-    }
-
-    if (author.length < 3) {    
-        throw new Error("Name is is too short");
-    }
-    if (author.length > 50) {               
-        throw new Error("Name is is too long");
-    }
-
-    if (!title.trim()) {
-        throw new Error("Title is required");
-    }
-    if (title.length > 100) {
-        throw new Error("Title must be less than 100 characters");
-    }
-    if (title.length < 3) {
-        throw new Error("Title is is too short");
-    }
-
-    if (!content.trim()) {
-        throw new Error("Message content is required");
-    }
-    if (content.length > 1000) {
-        throw new Error("Message must be less than 1000 characters");
-    }
-    if (content.length < 3) {
-        throw new Error("Message is is too short");
-    }
+    const { author, title, content, email } = parsed.data;
 
     try {
         await prisma.message.create({
             data: {
-                title: title,
-                content: content,
-                author: author,
+                title,
+                content,
+                author,
                 userEmail: email
             }
         });
 
         revalidatePath("/dashboard");
-        
-        //return message;
     } catch (error) {
         console.error("Failed to create message:", error);
         throw new Error("Failed to create message");

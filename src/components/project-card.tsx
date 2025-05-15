@@ -2,7 +2,6 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-//import { ExternalLink } from "lucide-react";
 
 interface ProjectCardProps {
     title: string
@@ -22,6 +21,7 @@ export default function ProjectCard({ title, description, image, link, source, t
                 alt={title}
                 fill
                 className="object-cover transition-transform hover:scale-105"
+                loading="lazy"
                 />
             </div>
             <CardContent className="p-4 h-30 mb-10">
