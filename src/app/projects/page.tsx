@@ -24,7 +24,7 @@ export default function Projects() {
                 />
                 <ProjectCard
                     title="E-Commerce Shop"
-                    description="(WIP) Demo E-Commerce shop with Next.js, Material UI, Context API, and Node.js, and deployed to Azure. View and shop various toy products."
+                    description="Demo E-Commerce shop with Next.js, Material UI, Context API, D3.js, and Node.js, and deployed to Azure. View and shop various toy products."
                     image="/projects/Ecommerce.png"
                     link="https://aketoy-gzg9gfc6g0bch5dz.centralus-01.azurewebsites.net/"
                     source="https://github.com/kikimwebsite/Ecommerce-client"

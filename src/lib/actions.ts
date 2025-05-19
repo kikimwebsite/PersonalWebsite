@@ -34,10 +34,8 @@ interface MessageData {
 }
 
 export async function createMessage(data: MessageData) {
-    // Validate input using Zod
     const parsed = MessageSchema.safeParse(data);
     if (!parsed.success) {
-        // Return the first error message
         throw new Error(parsed.error.errors[0].message);
     }
     const { author, title, content, email } = parsed.data;
@@ -72,7 +70,6 @@ export async function deleteMessage(messageId: string) {
     }
 
     try {
-        // First check if the message belongs to the user
         const message = await prisma.message.findUnique({
             where: { id: messageId }
         })
@@ -85,7 +82,6 @@ export async function deleteMessage(messageId: string) {
             throw new Error("You don't have permission to delete this message");
         }
 
-        // Delete the message
         await prisma.message.delete({
             where: { id: messageId }
         });
