@@ -66,9 +66,9 @@ export default function SkillsDrawer() {
             "Mongoose",
             "MySQL"
         ],
-        cloud: ["AWS", "Azure", "Vercel", "Supabase", "Neon"],
+        cloud: ["Amazon Web Services", "Azure", "Vercel", "Heroku", "Supabase", "Neon"],
         ai: [
-            "AI API Integration",
+            "AI Integration",
             "OpenAI",
             "ChatGPT",
             "GitHub Copilot",
@@ -85,8 +85,8 @@ export default function SkillsDrawer() {
             "TypeScript",
             "JavaScript",
             "Python",
-            "Java",
             "Ruby",
+            "Java",
             "C",
             "C#",
         ],

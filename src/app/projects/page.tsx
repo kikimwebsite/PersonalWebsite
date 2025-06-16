@@ -30,7 +30,27 @@ export default function Projects() {
                     source="https://github.com/kikimwebsite/Ecommerce-client"
                     tags={[]}
                 />
+{/*
 
+                <ProjectCard
+                    title="DirectChat"
+                    description="Live chat application with Next.js, TypeScript, and Tailwind. Users can sign in with OAuth using Auth.js to chat with each other."
+                    image="/projects/"
+                    link=""
+                    source=""
+                    tags={[]}
+                />
+
+                <ProjectCard
+                    title="Email"
+                    description="Demo Email application."
+                    image="/projects/"
+                    link=""
+                    source=""
+                    tags={[]}
+                />
+
+*/}
             </div>
         </div>
     )
