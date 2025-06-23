@@ -51,6 +51,8 @@ export async function createMessage(data: MessageData) {
         });
 
         revalidatePath("/dashboard");
+
+        return { success: true, message: "Message created successfully" };
     } catch (error) {
         console.error("Failed to create message:", error);
         throw new Error("Failed to create message");
@@ -88,7 +90,7 @@ export async function deleteMessage(messageId: string) {
 
         revalidatePath("/dashboard");
         
-        //return { success: true }
+        return { success: true, message: "Message deleted successfully" };
     } catch (error) {
         console.error("Failed to delete message:", error)
         throw new Error("Failed to delete message. Please try again.")
