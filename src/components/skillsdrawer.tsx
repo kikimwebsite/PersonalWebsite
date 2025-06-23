@@ -56,7 +56,7 @@ export default function SkillsDrawer() {
             "WebSockets",
             "Redis",
             "Postman",
-            "Serverless Functions",
+            "Serverless Design",
         ],
         databases: [
             "PostgreSQL",
@@ -64,12 +64,14 @@ export default function SkillsDrawer() {
             "DynamoDB",
             "MongoDB",
             "Mongoose",
-            "MySQL"
+            "MySQL",
+            "Sequelize",
         ],
         cloud: ["Amazon Web Services", "Azure", "Vercel", "Heroku", "Supabase", "Neon"],
         ai: [
             "AI Integration",
             "OpenAI",
+            "Azure AI Foundry",
             "ChatGPT",
             "GitHub Copilot",
             "Microsoft Copilot",
@@ -105,6 +107,8 @@ export default function SkillsDrawer() {
             "OAuth",
             "JWT (JSON Web Token)",
             "CSRF Protection",
+            "CORS (Cross-Origin Resource Sharing)",
+            "XSS (Cross-Site Scripting) Prevention",
             "NextAuth.js",
             "Auth.js",
             "AWS Cognito",
